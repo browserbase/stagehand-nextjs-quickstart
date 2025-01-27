@@ -29,7 +29,7 @@ To use Anthropic (or other LLMs), you'll need to edit [stagehand.config.ts](stag
 You'll also want to set your Browserbase API key and project ID to run this project in the cloud.
 
 ```bash
-cp .env.example .env && nano .env # Add your API keys to .env
+cp .example.env .env # Add your API keys to .env
 ```
 
 ### Custom .cursorrules
