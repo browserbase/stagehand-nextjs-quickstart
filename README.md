@@ -1,6 +1,6 @@
 # 🤘 Welcome to Stagehand Next.js!
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbrowserbase%2Fstagehand-nextjs-quickstart&env=BROWSERBASE_API_KEY,BROWSERBASE_PROJECT_ID,OPENAI_API_KEY&envDescription=Browserbase%20credentials%20%2B%20OpenAI.%20You%20can%20configure%20your%20project%20to%20use%20Anthropic%20or%20a%20custom%20LLMClient%20in%20stagehand.config.ts)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbrowserbase%2Fstagehand-nextjs-quickstart&env=BROWSERBASE_API_KEY,BROWSERBASE_PROJECT_ID,OPENAI_API_KEY&envDescription=Browserbase%20credentials%20%2B%20OpenAI.%20You%20can%20configure%20your%20project%20to%20use%20Anthropic%20or%20a%20custom%20LLMClient%20in%20stagehand.config.ts&project-name=stagehand-nextjs&repository-name=stagehand-nextjs)
 
 Hey! This is a Next.js project built with [Stagehand](https://github.com/browserbase/stagehand).
 
