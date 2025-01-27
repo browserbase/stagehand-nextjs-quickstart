@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤘 Welcome to Stagehand!
 
-## Getting Started
+Hey! This is a Next.js project built with [Stagehand](https://github.com/browserbase/stagehand).
 
-First, run the development server:
+You can build your own web agent using: `npx create-browser-app`!
+
+## Setting the Stage
+
+Stagehand is an SDK for automating browsers. It's built on top of [Playwright](https://playwright.dev/) and provides a higher-level API for better debugging and AI fail-safes.
+
+## Curtain Call
+
+Get ready for a show-stopping development experience. Just run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install && npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What's Next?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Add your API keys
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project defaults to using OpenAI, so it's going to throw a fit if you don't have an OpenAI API key.
 
-## Learn More
+To use Anthropic (or other LLMs), you'll need to edit [stagehand.config.ts](stagehand.config.ts) to use the appropriate API key.
 
-To learn more about Next.js, take a look at the following resources:
+You'll also want to set your Browserbase API key and project ID to run this project in the cloud.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cp .env.example .env && nano .env # Add your API keys to .env
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Custom .cursorrules
 
-## Deploy on Vercel
+We have custom .cursorrules for this project. It'll help quite a bit with writing Stagehand easily.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Run on Browserbase
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To run on Browserbase, add your API keys to .env and change `env: "LOCAL"` to `env: "BROWSERBASE"` in [stagehand.config.ts](stagehand.config.ts).
+
+### Use Anthropic Claude 3.5 Sonnet
+
+1. Add your API key to .env
+2. Change `modelName: "gpt-4o"` to `modelName: "claude-3-5-sonnet-latest"` in [stagehand.config.ts](stagehand.config.ts)
+3. Change `modelClientOptions: { apiKey: process.env.OPENAI_API_KEY }` to `modelClientOptions: { apiKey: process.env.ANTHROPIC_API_KEY }` in [stagehand.config.ts](stagehand.config.ts)
