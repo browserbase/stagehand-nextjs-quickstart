@@ -1,0 +1,138 @@
+{
+  "44aa1a269b149ca5319d2bfb4c3ce2936be932dda5ddf3fb39f4466f7245616f": {
+    "data": {
+      "playwrightCommand": {
+        "method": "fill",
+        "args": [
+          "browserbase"
+        ]
+      },
+      "componentString": "<textarea title=\"Search\" aria-label=\"Search\" placeholder=\"\" name=\"q\" role=\"combobox\"></textarea>",
+      "xpaths": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]",
+        "//*[@id='APjFqb']",
+        "//textarea[@role='combobox']"
+      ],
+      "newStepString": "\n## Step: Typed 'browserbase' into the search textarea.\n  Element: <textarea id=\"APjFqb\" class=\"gLFyf\" aria-label=\"Search\" aria-expanded=\"false\" aria-haspopup=\"false\" data-ved=\"0ahUKEwi1t5f3opSLAxW-ATQIHT9YA7MQ39UDCAY\"></textarea>\n  Action: fill\n  Reasoning: The user wants to search for 'browserbase'.\n",
+      "completed": false,
+      "previousSelectors": [],
+      "action": "type in browserbase and hit enter"
+    },
+    "timestamp": 1737924953814,
+    "requestId": "llizzk2vz47"
+  },
+  "137a27bb71796d29b5f29e3003c1d50bd937b9e7be3347ba8fd28017bdaf1a52": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<textarea title=\"Search\" aria-label=\"Search\" placeholder=\"\" name=\"q\" role=\"combobox\"></textarea>",
+      "xpaths": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]",
+        "//*[@id='APjFqb']",
+        "//textarea[@role='combobox']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' key in the search textarea.\n  Element: <textarea id=\"APjFqb\" class=\"gLFyf\" aria-label=\"Search\" aria-expanded=\"true\" aria-haspopup=\"false\" data-ved=\"0ahUKEwi1t5f3opSLAxW-ATQIHT9YA7MQ39UDCAY\"></textarea>\n  Action: press\n  Reasoning: The user wants to execute the search for 'browserbase' after typing it in the search bar.\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in browserbase and hit enter"
+    },
+    "timestamp": 1737924957805,
+    "requestId": "llizzk2vz47"
+  },
+  "c207e8d3f6d44304f98e3b1728e5ab54ac03a6b6518b9f1ea84563a9abc9a846": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/span[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to initiate the search for 'browserbase'.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwjHreb2xpSLAxXnMjQIHf7MBigQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in browserbase and hit enter"
+    },
+    "timestamp": 1737934611593,
+    "requestId": "rvah29sg2us"
+  },
+  "d0effb02c45bcc2c1f9a64a81abbb7b6f3aebe29a67f48690fc0b8c9dc9f8e7c": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<textarea aria-label=\"Search\" placeholder=\"\" name=\"q\" role=\"combobox\">browserbase</textarea>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/textarea[1]",
+        "//*[@id='APjFqb']",
+        "//textarea[@role='combobox']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' key in the search textarea.\n  Element: <textarea id=\"APjFqb\" class=\"gLFyf\" aria-label=\"Search\" aria-expanded=\"false\" aria-haspopup=\"false\" value=\"browserbase\" data-ved=\"0ahUKEwjY8qaDx5SLAxWSIDQIHU11MesQ39UDCAw\">browserbase</textarea>\n  Action: press\n  Reasoning: The user wants to execute the search for 'browserbase' after typing it in the search bar.\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in browserbase and hit enter"
+    },
+    "timestamp": 1737934637143,
+    "requestId": "v347mkund1"
+  },
+  "6fe86c8e7576a5b0c771a1924934a8ca733294fbc5cd7ee1db0bdbb63d5f3a44": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<textarea aria-label=\"Search\" placeholder=\"\" name=\"q\" role=\"combobox\">browserbase</textarea>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/textarea[1]",
+        "//*[@id='APjFqb']",
+        "//textarea[@role='combobox']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' key in the search textarea to execute the search for 'browserbase'.\n  Element: <textarea id=\"APjFqb\" class=\"gLFyf\" aria-label=\"Search\" aria-expanded=\"false\" aria-haspopup=\"false\" value=\"browserbase\" data-ved=\"0ahUKEwjQ5NXBx5SLAxUaCTQIHbqJAG0Q39UDCAw\">browserbase</textarea>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in browserbase and hit enter"
+    },
+    "timestamp": 1737934768361,
+    "requestId": "61wr5o7hovn"
+  },
+  "71902593b3fdaf9eed73b3750cbc38f1a5e602a5cb787900f84349d48b6d39fd": {
+    "data": {
+      "playwrightCommand": {
+        "method": "click",
+        "args": []
+      },
+      "componentString": "<a href=\"/quickstart/playwright\"><div class=\"px-6 py-5\"><div class=\"h-6 w-6 fill-gray-800 dark:fill-gray-100 text-gray-800 dark:text-gray-100\"><svg class=\"h-6 w-6 bg-primary dark:bg-primary-light\" style=\"mask-image: url(&quot;https://mintlify.b-cdn.net/v6.6.0/sharp-solid/book.svg&quot;); mask-repeat: no-repeat; mask-position: center center;\"></svg></div><div><h2 class=\"font-semibold text-base text-gray-800 dark:text-white mt-4\">Quickstart</h2><div class=\"mt-1 font-normal text-sm leading-6 text-gray-600 dark:text-gray-400\"><p>This simple, step-by-step tutorial will help you get started with Browserbase. Start working with browser sessions in no time.</p></div></div></div></a>",
+      "xpaths": [
+        "/html/body[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/a[1]",
+        "//html/body/div/main/div/div[2]/div[2]/div/div[1]/div[2]/div[1]/a[1]"
+      ],
+      "newStepString": "\n## Step: Clicked on the link to the quickstart tutorial, which is a simple, step-by-step guide to help users get started with Browserbase.\n  Element: <a class=\"card block not-prose font-normal group relative my-2 ring-2 ring-transparent rounded-2xl bg-white dark\n  Action: click\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [],
+      "action": "Click the link to the quickstart"
+    },
+    "timestamp": 1737935031981,
+    "requestId": "v1shqv79ml"
+  }
+}

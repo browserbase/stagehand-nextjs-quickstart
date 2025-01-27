@@ -1,0 +1,646 @@
+{
+  "193eb4d62918f74c06b8907314f8babcfb8b8ea885fff718e67f1d2a8788f184": {
+    "data": {
+      "id": "chatcmpl-Au3xU9GOCC4GjzpRHrWJhWHG007k3",
+      "object": "chat.completion",
+      "created": 1737924948,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_QmMgIQJECGsuuTGs2xQIbnfx",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\": \"fill\", \"element\": 11, \"args\": [\"browserbase\"], \"step\": \"Typed 'browserbase' into the search textarea.\", \"why\": \"The user wants to search for 'browserbase'.\", \"completed\": false}"
+                }
+              },
+              {
+                "id": "call_T1GxvCSKZZz660xnX6IWwooH",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\": \"press\", \"element\": 11, \"args\": [\"Enter\"], \"step\": \"Pressed 'Enter' key in the search textarea.\", \"why\": \"To execute the search for 'browserbase'.\", \"completed\": true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1562,
+        "completion_tokens": 121,
+        "total_tokens": 1683,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": "fp_50cad350e4"
+    },
+    "timestamp": 1737924950328,
+    "requestId": "llizzk2vz47"
+  },
+  "83abb2577d526f9a81e03939623958aee885d6ef4c4005cf9dcfe51a8c4c8ae4": {
+    "data": {
+      "id": "chatcmpl-Au3xbgreyf0XRK70qAQjq0DIQpGjP",
+      "object": "chat.completion",
+      "created": 1737924955,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_8CzfxuRJLCdu5X0JJcoTUYU4",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":11,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' key in the search textarea.\",\"why\":\"The user wants to execute the search for 'browserbase' after typing it in the search bar.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 9516,
+        "completion_tokens": 62,
+        "total_tokens": 9578,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": "fp_50cad350e4"
+    },
+    "timestamp": 1737924957362,
+    "requestId": "llizzk2vz47"
+  },
+  "c72bfec14c8052f6d088474916591625f5fb4ce34373ecb8305dcb5c17bd7c18": {
+    "data": {
+      "id": "chatcmpl-Au6TJ2c0FMxgUa4gwzxN0aEsbKN1S",
+      "object": "chat.completion",
+      "created": 1737934609,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_iT6gxhfHRVUUzkTo77GfQL9C",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":81,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to initiate the search for 'browserbase'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4923,
+        "completion_tokens": 46,
+        "total_tokens": 4969,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": "fp_50cad350e4"
+    },
+    "timestamp": 1737934610807,
+    "requestId": "rvah29sg2us"
+  },
+  "8b2e8c074f2e6a0c785086b38330cfb2a22b3f91c470acbf5361fa75cb665d41": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1737934625759,
+    "requestId": "rvah29sg2us"
+  },
+  "aee7dc4201eb03c569fa010cfbbe8f69a145f5bdeb2aeca9280528a15a9945e9": {
+    "data": {
+      "id": "chatcmpl-Au6TjTniQRuTaETEwZ2qTNn6oRbCZ",
+      "object": "chat.completion",
+      "created": 1737934635,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_gMEfxjBzPEnVdHa19DxgFfyD",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":69,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' key in the search textarea.\",\"why\":\"The user wants to execute the search for 'browserbase' after typing it in the search bar.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4740,
+        "completion_tokens": 62,
+        "total_tokens": 4802,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": "fp_50cad350e4"
+    },
+    "timestamp": 1737934636388,
+    "requestId": "v347mkund1"
+  },
+  "479a86c80fe91a7643883e70492b3d3c8e35a82129fdd374255605746b20e7eb": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1737934653147,
+    "requestId": "v347mkund1"
+  },
+  "77debae82f7c55adb201bbb54ba82f579d0e5b00f355e92a756cdd7642955a60": {
+    "data": {
+      "id": "chatcmpl-Au6VqV6W1mgz4JWsntXHuFaxp5dfP",
+      "object": "chat.completion",
+      "created": 1737934766,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_6jeTrMrppsSxJQCUjRCtVVgy",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":81,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' key in the search textarea to execute the search for 'browserbase'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5260,
+        "completion_tokens": 49,
+        "total_tokens": 5309,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": "fp_50cad350e4"
+    },
+    "timestamp": 1737934767940,
+    "requestId": "61wr5o7hovn"
+  },
+  "4dc291baf9fc51a7d5484b4f0c687bb520ec76a250d05cf09cbc868ba1e3dde1": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1737934782265,
+    "requestId": "61wr5o7hovn"
+  },
+  "070c3436a5ff58e718c7d4b3d9a3c363a0cd6fcc2bcb7b52a44e6e08fa8365f2": {
+    "data": {
+      "title": "Quickstart",
+      "link": "/quickstart/playwright",
+      "description": "This simple, step-by-step tutorial will help you get started with\nBrowserbase. Start working with browser sessions in no time."
+    },
+    "timestamp": 1737934985955,
+    "requestId": "2wpq4yj1m7n"
+  },
+  "0addb036b1280d1bc236564121a0a4763ace8736077383318a26c6f1b9ee1d86": {
+    "data": {
+      "title": "Quickstart",
+      "link": "/quickstart/playwright",
+      "description": "This simple, step-by-step tutorial will help you get started with Browserbase. Start working with browser sessions in no time."
+    },
+    "timestamp": 1737934986976,
+    "requestId": "2wpq4yj1m7n"
+  },
+  "ce2aa37bcabc92a4bf32df89801b9313764a07f99f825327dac8b313d1ec0596": {
+    "data": {
+      "progress": "The extraction response contains all required elements: title, description, and link.",
+      "completed": true
+    },
+    "timestamp": 1737936932759,
+    "requestId": "h36jihu0fy"
+  },
+  "79d9859720c1f27b3b970dc545f72c6201264dac4320db04cacc99791deb92fb": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 53,
+          "description": "Link to 'Performance Tuning' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 56,
+          "description": "Link to 'Parallelization' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 59,
+          "description": "Link to 'Authentication' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 62,
+          "description": "Link to 'Multi-Region' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 65,
+          "description": "Link to 'Session Recordings' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 68,
+          "description": "Link to 'Long Running Sessions' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 71,
+          "description": "Link to 'Multi-Users' guide under the 'Guides' section."
+        }
+      ]
+    },
+    "timestamp": 1737935025670,
+    "requestId": "a4wqeooy0o"
+  },
+  "5cd79b8be05b9eea2e0e4ea8286889fa0113b4aef1f32a1a5b40c990181e854f": {
+    "data": {
+      "id": "chatcmpl-Au6a4tdgg82gVHZ90wCJEi0Y6vvqo",
+      "object": "chat.completion",
+      "created": 1737935028,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_7qF4pOo8YWp4VxtpSEeS0h52",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"click\",\"element\":80,\"args\":[],\"step\":\"Clicked on the link to the quickstart tutorial, which is a simple, step-by-step guide to help users get started with Browserbase.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4221,
+        "completion_tokens": 56,
+        "total_tokens": 4277,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": "fp_50cad350e4"
+    },
+    "timestamp": 1737935029445,
+    "requestId": "v1shqv79ml"
+  },
+  "d183e0214248daa20109b255d8a23273a0b7e520e5367e96788c7f303a14a6aa": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1737935048414,
+    "requestId": "v1shqv79ml"
+  },
+  "4ab32cd916dc2e6b7d2e37147aef7ae08313291028c2b8840df619b626d6cae7": {
+    "data": {
+      "title": "Quickstart",
+      "link": "/quickstart/playwright",
+      "description": "This simple, step-by-step tutorial will help you get started with\nBrowserbase. Start working with browser sessions in no time."
+    },
+    "timestamp": 1737935092252,
+    "requestId": "sl8j5e7n42h"
+  },
+  "d47e3e70119befe944d9db26dd55327e8f1a97c68cb9ee530b1c25e97c43e747": {
+    "data": {
+      "progress": "Title, description, and link have been successfully extracted.",
+      "completed": true
+    },
+    "timestamp": 1737935273750,
+    "requestId": "nki1on3vyf8"
+  },
+  "cc324b1deeebe02ff4aeea91b3db0427315f54080c2ea3690fd26dd18c155319": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 53,
+          "description": "Link to the 'Performance Tuning' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 56,
+          "description": "Link to the 'Parallelization' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 59,
+          "description": "Link to the 'Authentication' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 62,
+          "description": "Link to the 'Multi-Region' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 65,
+          "description": "Link to the 'Session Recordings' guide under the 'Guides' section."
+        }
+      ]
+    },
+    "timestamp": 1737935140425,
+    "requestId": "xi1iry0g1m9"
+  },
+  "44581df2e97eb0a3f7bd06f14118f4d629d0904066e642a1a510e5bbbcf12a12": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1737935163274,
+    "requestId": "zj5b0c86s7c"
+  },
+  "a4b77046635c3ebc02e1503afcd464d29d1c5588e1dbd546c5b13652ee3dbfc0": {
+    "data": {
+      "title": "Quickstart",
+      "link": "/quickstart/playwright",
+      "description": "This simple, step-by-step tutorial will help you get started with\nBrowserbase. Start working with browser sessions in no time."
+    },
+    "timestamp": 1737935273096,
+    "requestId": "nki1on3vyf8"
+  },
+  "ba560d6701466ce90fd7bc13407f520447afdac4410345121ad0842ce73206d3": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 53,
+          "description": "Link to the 'Performance Tuning' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 56,
+          "description": "Link to the 'Parallelization' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 59,
+          "description": "Link to the 'Authentication' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 62,
+          "description": "Link to the 'Multi-Region' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 65,
+          "description": "Link to the 'Session Recordings' guide under the 'Guides' section."
+        }
+      ]
+    },
+    "timestamp": 1737935321300,
+    "requestId": "af98x3ocpx"
+  },
+  "ee0e249d7f4242a2200e3906bebcbb17ddf935dc23f31b0e0eb2f8f30568eddc": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1737935343454,
+    "requestId": "gsvcvksarih"
+  },
+  "fd19281f441691218e2624301d0c64170d74347df99c67e3beba442c64e7c7e4": {
+    "data": {
+      "title": "Quickstart",
+      "link": "/quickstart/playwright",
+      "description": "This simple, step-by-step tutorial will help you get started with\nBrowserbase. Start working with browser sessions in no time."
+    },
+    "timestamp": 1737935357570,
+    "requestId": "5bkbh7a85t7"
+  },
+  "36e700e0f48f24979fd040c9ce9bf0bb48333dfc9b4970adbc599e7ba19c6dfb": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 53,
+          "description": "Link to 'Performance Tuning' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 56,
+          "description": "Link to 'Parallelization' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 59,
+          "description": "Link to 'Authentication' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 62,
+          "description": "Link to 'Multi-Region' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 65,
+          "description": "Link to 'Session Recordings' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 68,
+          "description": "Link to 'Long Running Sessions' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 71,
+          "description": "Link to 'Multi-Users' guide under the 'Guides' section."
+        }
+      ]
+    },
+    "timestamp": 1737935397806,
+    "requestId": "03x8qpwr04y7"
+  },
+  "d01b6193b5e17f308e0e14498428e5d09d297913173568edf8524db9e3660dba": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1737935417956,
+    "requestId": "miintv1401"
+  },
+  "350546824867eb7eec949472bbfd5b00bbb6702b2bf5997d5f9005f5fa8650ec": {
+    "data": {
+      "title": "Quickstart",
+      "link": "/quickstart/playwright",
+      "description": "This simple, step-by-step tutorial will help you get started with\nBrowserbase. Start working with browser sessions in no time."
+    },
+    "timestamp": 1737936916379,
+    "requestId": "dg6raf1b2w6"
+  },
+  "ff21c4696786d8898d91d85fb6fce79a12587a5e8d1c53773d2ea80b4530d2e8": {
+    "data": {
+      "title": "Quickstart",
+      "link": "/quickstart/playwright",
+      "description": "This simple, step-by-step tutorial will help you get started with\nBrowserbase. Start working with browser sessions in no time."
+    },
+    "timestamp": 1737936932085,
+    "requestId": "h36jihu0fy"
+  },
+  "f2d6bcd0b77eb0f67dab57377ecb7679578ceae07fd46b6f52cadbd83dcad218": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 53,
+          "description": "Link to 'Performance Tuning' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 56,
+          "description": "Link to 'Parallelization' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 59,
+          "description": "Link to 'Authentication' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 62,
+          "description": "Link to 'Multi-Region' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 65,
+          "description": "Link to 'Session Recordings' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 68,
+          "description": "Link to 'Long Running Sessions' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 71,
+          "description": "Link to 'Multi-Users' guide under the 'Guides' section."
+        }
+      ]
+    },
+    "timestamp": 1737936956801,
+    "requestId": "261poyqxh0w"
+  },
+  "0c7c938f1ab886d4ee9f913aaa6d49e0bcecb3516512eb443d4ebc5dd41eebc1": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 53,
+          "description": "Link to the 'Performance Tuning' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 56,
+          "description": "Link to the 'Parallelization' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 59,
+          "description": "Link to the 'Authentication' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 62,
+          "description": "Link to the 'Multi-Region' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 65,
+          "description": "Link to the 'Session Recordings' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 68,
+          "description": "Link to the 'Long Running Sessions' guide under the 'Guides' section."
+        },
+        {
+          "elementId": 71,
+          "description": "Link to the 'Multi-Users' guide under the 'Guides' section."
+        }
+      ]
+    },
+    "timestamp": 1737936976470,
+    "requestId": "ebeanzxgtrk"
+  },
+  "1a35723d8a1b58c1e33fff33ace378618ad86f3e189aaed0ba8a45e885df2de7": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1737936977810,
+    "requestId": "fbhefqd3a06"
+  },
+  "1eba59125734d72477d0bee63f0c915944fb5868abdbcd775ab4d7b61d906b65": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1737936996192,
+    "requestId": "xpfscw8xia"
+  }
+}
