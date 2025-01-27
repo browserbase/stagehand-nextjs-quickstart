@@ -23,7 +23,9 @@ export default function Home() {
     setConfig(config);
     const warningToShow: string[] = [];
     if (!config.hasLLMCredentials) {
-      warningToShow.push("No ANTHROPIC_API_KEY or OPENAI_API_KEY found.");
+      warningToShow.push(
+        "No LLM credentials found. Edit stagehand.config.ts to configure your LLM client."
+      );
     }
     if (!config.hasBrowserbaseCredentials) {
       warningToShow.push(

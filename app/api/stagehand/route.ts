@@ -42,9 +42,7 @@ export async function getConfig() {
     process.env.BROWSERBASE_API_KEY !== undefined &&
     process.env.BROWSERBASE_PROJECT_ID !== undefined;
 
-  const hasLLMCredentials =
-    process.env.OPENAI_API_KEY !== undefined ||
-    process.env.ANTHROPIC_API_KEY !== undefined;
+  const hasLLMCredentials = process.env.OPENAI_API_KEY !== undefined;
 
   return {
     env: StagehandConfig.env,
