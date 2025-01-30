@@ -20,6 +20,8 @@ import boxen from "boxen";
 
 dotenv.config();
 
+const chalkYellow = (msg: string) => chalk.hex('#FEC83C')(msg);
+
 export async function main({
   page,
   stagehand,
@@ -30,7 +32,7 @@ export async function main({
 }) {
   console.log(
     [
-      `🤘 ${chalk.hex('#FEC83C')("Welcome to Stagehand!")}`,
+      `🤘 ${chalkYellow("Welcome to Stagehand!")}`,
       "",
       "Stagehand is a tool that allows you to automate browser interactions.",
       "Watch as this demo automatically performs the following steps:",
@@ -65,10 +67,10 @@ export async function main({
     }),
   });
   announce(
-    `The ${chalk.hex('#FEC83C')(description.title)} is at: ${chalk.hex('#FEC83C')(
+    `The ${chalkYellow(description.title)} is at: ${chalkYellow(
       chalk.blue(description.link)
     )}` +
-      `\n\n${chalk.hex('#FEC83C')(description.description)}` +
+      `\n\n${chalkYellow(description.description)}` +
       `\n\n${chalk.gray(JSON.stringify(description, null, 2))}`,
     "Extract"
   );
@@ -79,7 +81,7 @@ export async function main({
   announce(
     `${chalk.green("Observe:")} We can click:\n${observeResult
       .map(
-        (r) => `"${chalk.hex('#FEC83C')(r.description)}" -> ${chalk.gray(r.selector)}`
+        (r) => `"${chalkYellow(r.description)}" -> ${chalk.gray(r.selector)}`
       )
       .join("\n")}`,
     "Observe"
@@ -98,7 +100,7 @@ export async function main({
     await page.locator(quickStartSelector).click();
     await page.waitForLoadState("networkidle");
     announce(
-      `Clicked the quickstart link using base Playwright code. ${chalk.hex('#FEC83C')(
+      `Clicked the quickstart link using base Playwright code. ${chalkYellow(
         "Uncomment line 118 in index.ts to have Stagehand take over!"
       )}`
     );
@@ -108,7 +110,7 @@ export async function main({
     }
     announce(
       `${chalk.hex('##F03603')(
-        `Looks like an error occurred running Playwright. Let's have ${chalk.hex('#FEC83C')('Stagehand')} take over!`
+        `Looks like an error occurred running Playwright. Let's have ${chalkYellow('Stagehand')} take over!`
       )} \n${chalk.gray(e.message)}`,
       "Playwright"
     );
@@ -135,10 +137,10 @@ export async function main({
       `2. We used ${chalk.green(
         "extract"
       )} to find information about the quickstart`,
-      `The ${chalk.hex('#FEC83C')(description.title)} is at: ${chalk.hex('#FEC83C')(
+      `The ${chalkYellow(description.title)} is at: ${chalkYellow(
         chalk.blue(description.link)
       )}` +
-        `\n\n${chalk.hex('#FEC83C')(description.description)}` +
+        `\n\n${chalkYellow(description.description)}` +
         `\n\n${chalk.gray(JSON.stringify(description, null, 2))}`,
       `---`,
       `3. We used ${chalk.green(
@@ -146,7 +148,7 @@ export async function main({
       )} to find the links under the 'Guides' section and got the following results:`,
       `We could have clicked:\n\n${observeResult
         .map(
-          (r) => `"${chalk.hex('#FEC83C')(r.description)}" -> ${chalk.gray(r.selector)}`
+          (r) => `"${chalkYellow(r.description)}" -> ${chalk.gray(r.selector)}`
         )
         .join("\n")}`,
       `---`,
