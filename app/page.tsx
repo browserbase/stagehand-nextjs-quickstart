@@ -4,7 +4,7 @@ import {
   getConfig,
   runStagehand,
   startBBSSession,
-} from "@/app/api/stagehand/route";
+} from "@/app/api/stagehand/run";
 import DebuggerIframe from "@/components/stagehand/debuggerIframe";
 import { ConstructorParams } from "@browserbasehq/stagehand";
 import Image from "next/image";
