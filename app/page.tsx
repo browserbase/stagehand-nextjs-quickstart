@@ -109,7 +109,7 @@ export default function Home() {
               href={`https://www.browserbase.com/sessions/${sessionId}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-solid transition-colors flex items-center justify-center bg-[#F9F6F4] text-black gap-2 hover:border-[#9E9E9E] hover:text-black text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 group"
+              className="border border-solid transition-colors flex items-center justify-center bg-[#F9F6F4] text-black gap-2 hover:border-[#F7F7F7] hover:text-black text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 group "
             >
               <div className="relative w-4 h-4">
                 <Image
