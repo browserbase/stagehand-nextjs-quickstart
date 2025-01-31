@@ -109,7 +109,7 @@ export async function main({
       throw e;
     }
     announce(
-      `${chalk.hex('##F03603')(
+      `${chalk.hex('#F03603')(
         `Looks like an error occurred running Playwright. Let's have ${chalkYellow('Stagehand')} take over!`
       )} \n${chalk.gray(e.message)}`,
       "Playwright"
