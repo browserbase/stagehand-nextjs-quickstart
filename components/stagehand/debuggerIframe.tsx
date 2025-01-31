@@ -9,7 +9,7 @@ export default function DebuggerIframe({
 }) {
   if (!debugUrl && env === "LOCAL") {
     return (
-      <div className="w-full aspect-video bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden text-wrap">
+      <div className="w-full aspect-video bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden text-wrap border border-gray-200">
         <span className="text-black p-8 max-w-full whitespace-normal break-words">
           Running in local mode.
           <br />
@@ -37,5 +37,5 @@ export default function DebuggerIframe({
     );
   }
 
-  return <iframe src={debugUrl} className="h-full w-full aspect-video" />;
+  return <iframe src={debugUrl} className="h-full w-full aspect-video border border-gray-200 dark:border-gray-800 " />;
 }
