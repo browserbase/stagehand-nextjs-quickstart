@@ -11,8 +11,9 @@
   "dependencies": {
     "@browserbasehq/sdk": "^2.0.0",
     "@browserbasehq/stagehand": "^1.10.1",
-    "boxen": "^8.0.1",
     "next": "15.1.6",
+    "playwright": "1.50.1",
+    "playwright-core": "1.50.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "zod": "^3.24.1"
@@ -27,5 +28,6 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }

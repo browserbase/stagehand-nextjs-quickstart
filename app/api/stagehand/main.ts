@@ -14,13 +14,6 @@
 
 import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
-import chalk from "chalk";
-import dotenv from "dotenv";
-import boxen from "boxen";
-
-dotenv.config();
-
-const chalkYellow = (msg: string) => chalk.hex('#FEC83C')(msg);
 
 export async function main({
   page,
@@ -32,23 +25,15 @@ export async function main({
 }) {
   console.log(
     [
-      `🤘 ${chalkYellow("Welcome to Stagehand!")}`,
+      `🤘 "Welcome to Stagehand!"`,
       "",
       "Stagehand is a tool that allows you to automate browser interactions.",
       "Watch as this demo automatically performs the following steps:",
       "",
-      `📍 Step 1: Stagehand will auto-navigate to ${chalk.blue(
-        "https://docs.browserbase.com/"
-      )}`,
-      `📍 Step 2: Stagehand will use AI to ${chalk.green(
-        "extract"
-      )} information about the quickstart`,
-      `📍 Step 3: Stagehand will use AI to ${chalk.green(
-        "observe"
-      )} and identify links in the 'Guides' section`,
-      `📍 Step 4: Stagehand will attempt to click the first link using Playwright, with ${chalk.green(
-        "act"
-      )} as an AI fallback`,
+      `📍 Step 1: Stagehand will auto-navigate to "https://docs.browserbase.com/"`,
+      `📍 Step 2: Stagehand will use AI to "extract" information about the quickstart`,
+      `📍 Step 3: Stagehand will use AI to "observe" and identify links in the 'Guides' section`,
+      `📍 Step 4: Stagehand will attempt to click the first link using Playwright, with "act" as an AI fallback`,
     ].join("\n")
   );
 
@@ -67,11 +52,9 @@ export async function main({
     }),
   });
   announce(
-    `The ${chalkYellow(description.title)} is at: ${chalkYellow(
-      chalk.blue(description.link)
-    )}` +
-      `\n\n${chalkYellow(description.description)}` +
-      `\n\n${chalk.gray(JSON.stringify(description, null, 2))}`,
+    `The ${description.title} is at: ${description.link}` +
+      `\n\n${description.description}` +
+      `\n\n${JSON.stringify(description, null, 2)}`,
     "Extract"
   );
 
@@ -79,10 +62,8 @@ export async function main({
     instruction: "Find the links under the 'Guides' section",
   });
   announce(
-    `${chalk.green("Observe:")} We can click:\n${observeResult
-      .map(
-        (r) => `"${chalkYellow(r.description)}" -> ${chalk.gray(r.selector)}`
-      )
+    `Observe: We can click:\n${observeResult
+      .map((r) => `"${r.description}" -> ${r.selector}`)
       .join("\n")}`,
     "Observe"
   );
@@ -100,18 +81,15 @@ export async function main({
     await page.locator(quickStartSelector).click();
     await page.waitForLoadState("networkidle");
     announce(
-      `Clicked the quickstart link using base Playwright code. ${chalkYellow(
-        "Uncomment line 118 in index.ts to have Stagehand take over!"
-      )}`
+      `Clicked the quickstart link using base Playwright code. Uncomment line 118 in index.ts to have Stagehand take over!`
     );
   } catch (e) {
     if (!(e instanceof Error)) {
       throw e;
     }
     announce(
-      `${chalk.hex('#F03603')(
-        `Looks like an error occurred running Playwright. Let's have ${chalkYellow('Stagehand')} take over!`
-      )} \n${chalk.gray(e.message)}`,
+      `Looks like an error occurred running Playwright. Let's have Stagehand take over!` +
+        `\n${e.message}`,
       "Playwright"
     );
 
@@ -119,9 +97,8 @@ export async function main({
       action: "Click the link to the quickstart",
     });
     announce(
-      `${chalk.green(
-        "Clicked the quickstart link using Stagehand AI fallback."
-      )} \n${chalk.gray(actResult)}`,
+      `Clicked the quickstart link using Stagehand AI fallback.` +
+        `\n${actResult}`,
       "Act"
     );
   }
@@ -132,39 +109,27 @@ export async function main({
   console.log(
     [
       "To recap, here are the steps we took:",
-      `1. We went to ${chalk.blue("https://docs.browserbase.com/")}`,
+      `1. We went to https://docs.browserbase.com/`,
       `---`,
-      `2. We used ${chalk.green(
-        "extract"
-      )} to find information about the quickstart`,
-      `The ${chalkYellow(description.title)} is at: ${chalkYellow(
-        chalk.blue(description.link)
-      )}` +
-        `\n\n${chalkYellow(description.description)}` +
-        `\n\n${chalk.gray(JSON.stringify(description, null, 2))}`,
+      `2. We used extract to find information about the quickstart`,
+      `The ${description.title} is at: ${description.link}` +
+        `\n\n${description.description}` +
+        `\n\n${JSON.stringify(description, null, 2)}`,
       `---`,
-      `3. We used ${chalk.green(
-        "observe"
-      )} to find the links under the 'Guides' section and got the following results:`,
+      `3. We used observe to find the links under the 'Guides' section and got the following results:`,
       `We could have clicked:\n\n${observeResult
-        .map(
-          (r) => `"${chalkYellow(r.description)}" -> ${chalk.gray(r.selector)}`
-        )
+        .map((r) => `"${r.description}" -> ${r.selector}`)
         .join("\n")}`,
       `---`,
-      `4. We used Playwright to click the first link. If it failed, we used ${chalk.green(
-        "act"
-      )} to gracefully fallback to Stagehand AI.`,
+      `4. We used Playwright to click the first link. If it failed, we used act to gracefully fallback to Stagehand AI.`,
     ].join("\n\n")
   );
 }
 
 function announce(message: string, title?: string) {
-  console.log(
-    boxen(message, {
-      padding: 1,
-      margin: 3,
-      title: title || "Stagehand",
-    })
-  );
+  console.log({
+    padding: 1,
+    margin: 3,
+    title: title || "Stagehand",
+  });
 }

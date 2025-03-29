@@ -17,9 +17,21 @@ importers:
       boxen:
         specifier: ^8.0.1
         version: 8.0.1
+      chalk:
+        specifier: ^5.4.1
+        version: 5.4.1
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
       next:
         specifier: 15.1.6
         version: 15.1.6(@playwright/test@1.50.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      playwright:
+        specifier: 1.50.1
+        version: 1.50.1
+      playwright-core:
+        specifier: 1.50.1
+        version: 1.50.1
       react:
         specifier: ^19.0.0
         version: 19.0.0
