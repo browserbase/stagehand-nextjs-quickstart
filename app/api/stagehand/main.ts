@@ -4,23 +4,21 @@
  *
  * To edit config, see `stagehand.config.ts`
  *
- * In this quickstart, we'll be automating a browser session to show you the power of Playwright and Stagehand's AI features.
+ * In this quickstart, we'll be automating a browser session to show you the power of Stagehand.
  *
  * 1. Go to https://docs.browserbase.com/
  * 2. Use `extract` to find information about the quickstart
  * 3. Use `observe` to find the links under the 'Guides' section
- * 4. Use Playwright to click the first link. If it fails, use `act` to gracefully fallback to Stagehand AI.
+ * 4. Use Playwright to click the first link. If it fails, use `act` to gracefully fallback to Stagehand.
  */
 
-import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
-import { z } from "zod";
+import { Stagehand } from "@browserbasehq/stagehand";
+import { chromium } from "playwright-core";
+import { z } from "zod/v3";
 
 export async function main({
-  page,
   stagehand,
 }: {
-  page: Page; // Playwright Page with act, extract, and observe methods
-  context: BrowserContext; // Playwright BrowserContext
   stagehand: Stagehand; // Stagehand instance
 }) {
   console.log(
@@ -37,20 +35,27 @@ export async function main({
     ].join("\n")
   );
 
-  //   You can use the `page` instance to write any Playwright code
-  //   For more info: https://playwright.dev/docs/pom
+  const page = stagehand.context.pages()[0];
   await page.goto("https://docs.browserbase.com/");
 
-  const description = await page.extract({
-    instruction: "extract the title, description, and link of the quickstart",
-    // Zod is a schema validation library similar to Pydantic in Python
-    // For more information on Zod, visit: https://zod.dev/
-    schema: z.object({
+  // You can also attach Stagehand to Playwright and use those primitives directly
+  const browser = await chromium.connectOverCDP({
+    wsEndpoint: stagehand.connectURL(),
+  });
+  
+  const pwContext = browser.contexts()[0];
+  const pwPage = pwContext.pages()[0];
+
+  // Zod is a schema validation library similar to Pydantic in Python
+  // For more information on Zod, visit: https://zod.dev/
+  const description = await stagehand.extract(
+    "extract the title, description, and link of the quickstart",
+    z.object({
       title: z.string(),
       link: z.string(),
       description: z.string(),
-    }),
-  });
+    })
+  );
   announce(
     `The ${description.title} is at: ${description.link}` +
       `\n\n${description.description}` +
@@ -58,9 +63,9 @@ export async function main({
     "Extract"
   );
 
-  const observeResult = await page.observe({
-    instruction: "Find the links under the 'Guides' section",
-  });
+  const observeResult = await stagehand.observe(
+    "Find the links under the 'Guides' section",
+  );
   announce(
     `Observe: We can click:\n${observeResult
       .map((r) => `"${r.description}" -> ${r.selector}`)
@@ -68,18 +73,16 @@ export async function main({
     "Observe"
   );
 
-  //   In the event that your Playwright code fails, you can use the `act` method to
-  //   let Stagehand AI take over and complete the action.
   try {
     throw new Error(
-      "Comment out line 118 in index.ts to run the base Playwright code!"
+      "Comment out this error to run the base Playwright code!"
     );
 
     // Wait for search button and click it
     const quickStartSelector = `#content-area > div.relative.mt-8.prose.prose-gray.dark\:prose-invert > div > a:nth-child(1)`;
-    await page.waitForSelector(quickStartSelector);
-    await page.locator(quickStartSelector).click();
-    await page.waitForLoadState("networkidle");
+    await pwPage.waitForSelector(quickStartSelector);
+    await pwPage.locator(quickStartSelector).click();
+    await pwPage.waitForLoadState("networkidle");
     announce(
       `Clicked the quickstart link using base Playwright code. Uncomment line 118 in index.ts to have Stagehand take over!`
     );
@@ -87,24 +90,16 @@ export async function main({
     if (!(e instanceof Error)) {
       throw e;
     }
-    announce(
-      `Looks like an error occurred running Playwright. Let's have Stagehand take over!` +
-        `\n${e.message}`,
-      "Playwright"
-    );
 
-    const actResult = await page.act({
-      action: "Click the link to the quickstart",
-    });
+    const actResult = await stagehand.act(
+      "Click the link to the quickstart",
+    );
     announce(
       `Clicked the quickstart link using Stagehand AI fallback.` +
         `\n${actResult}`,
       "Act"
     );
   }
-
-  //   Close the browser
-  await stagehand.close();
 
   console.log(
     [
@@ -121,7 +116,7 @@ export async function main({
         .map((r) => `"${r.description}" -> ${r.selector}`)
         .join("\n")}`,
       `---`,
-      `4. We used Playwright to click the first link. If it failed, we used act to gracefully fallback to Stagehand AI.`,
+      `4. We used Playwright to click the first link. If it failed, we used act to gracefully fallback to Stagehand.`,
     ].join("\n\n")
   );
 }
@@ -131,5 +126,6 @@ function announce(message: string, title?: string) {
     padding: 1,
     margin: 3,
     title: title || "Stagehand",
+    message: message,
   });
 }

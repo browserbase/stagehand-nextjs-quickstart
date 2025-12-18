@@ -1,27 +1,36 @@
-import type { ConstructorParams, LogLine } from "@browserbasehq/stagehand";
+import type { V3Options, LogLine } from "@browserbasehq/stagehand";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-const StagehandConfig: ConstructorParams = {
-  env: "BROWSERBASE",
+const StagehandConfig: V3Options = {
+  env: "BROWSERBASE" /* Environment: "LOCAL" or "BROWSERBASE" */,
+  verbose: 2 /* Logging verbosity: 0 (minimal), 1 (default), or 2 (detailed) */,
   apiKey: process.env.BROWSERBASE_API_KEY /* API key for authentication */,
   projectId: process.env.BROWSERBASE_PROJECT_ID /* Project identifier */,
-  debugDom: true /* Enable DOM debugging features */,
-  headless: false /* Run browser in headless mode */,
-  logger: (message: LogLine) =>
-    console.log(logLineToString(message)) /* Custom logging function */,
-  domSettleTimeoutMs: 30_000 /* Timeout for DOM to settle in milliseconds */,
-  browserbaseSessionCreateParams: {
-    projectId: process.env.BROWSERBASE_PROJECT_ID!,
-  },
-  enableCaching: false /* Enable caching functionality */,
   browserbaseSessionID:
     undefined /* Session ID for resuming Browserbase sessions */,
-  modelName: "gpt-4o" /* Name of the model to use */,
-  modelClientOptions: {
+  browserbaseSessionCreateParams: {
+    projectId: process.env.BROWSERBASE_PROJECT_ID!,
+  } /* Parameters for creating Browserbase sessions */,
+  localBrowserLaunchOptions: {
+    headless: false,
+  } /* Options for local browser launch (headless, args, etc.) */,
+  model: {
+    modelName: "gpt-4o",
     apiKey: process.env.OPENAI_API_KEY,
-  } /* Configuration options for the model client */,
+  } /* Model configuration: can be string or object with modelName and apiKey */,
+  llmClient: undefined /* Optional: custom LLM client implementation */,
+  systemPrompt: undefined /* Optional: system prompt for model */,
+  logger: (message: LogLine) =>
+    console.log(logLineToString(message)) /* Custom logging function */,
+  domSettleTimeout: 30_000 /* Timeout for DOM to settle in milliseconds */,
+  selfHeal: undefined /* Enable self-healing for failed actions */,
+  logInferenceToFile: false /* Log inference calls to file */,
+  experimental: false /* Enable experimental features */,
+  disablePino: false /* Disable pino logging backend */,
+  disableAPI: false /* Disable API functionality */,
+  cacheDir: undefined /* Directory for caching actions (enables caching when set) */,
 };
 export default StagehandConfig;
 
