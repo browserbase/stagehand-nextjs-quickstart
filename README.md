@@ -8,14 +8,14 @@ You can build your own web agent using: `npx create-browser-app`!
 
 ## Setting the Stage
 
-Stagehand is an SDK for automating browsers. It's built on top of [Playwright](https://playwright.dev/) and provides a higher-level API for better debugging and AI fail-safes.
+Stagehand is an SDK for automating browsers. It's built directly on top of [CDP](https://chromedevtools.github.io/devtools-protocol/) and provides a higher-level API for better debugging and AI fail-safes.
 
 ## Curtain Call
 
 Get ready for a show-stopping development experience. Just run:
 
 ```bash
-npm install && npm run dev
+pnpm install && pnpm dev
 ```
 
 ## What's Next?
@@ -40,8 +40,8 @@ We have custom .cursorrules for this project. It'll help quite a bit with writin
 
 To run on Browserbase, add your API keys to .env and change `env: "LOCAL"` to `env: "BROWSERBASE"` in [stagehand.config.ts](stagehand.config.ts).
 
-### Use Anthropic Claude 3.5 Sonnet
+### Use Anthropic Claude 4.5 Sonnet
 
 1. Add your API key to .env
-2. Change `modelName: "gpt-4o"` to `modelName: "claude-3-5-sonnet-latest"` in [stagehand.config.ts](stagehand.config.ts)
+2. Change `modelName: "gpt-4o"` to `modelName: "claude-sonnet-4-5"` in [stagehand.config.ts](stagehand.config.ts)
 3. Change `modelClientOptions: { apiKey: process.env.OPENAI_API_KEY }` to `modelClientOptions: { apiKey: process.env.ANTHROPIC_API_KEY }` in [stagehand.config.ts](stagehand.config.ts)

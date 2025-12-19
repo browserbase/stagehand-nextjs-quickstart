@@ -6,7 +6,7 @@
  * To edit the Stagehand script, see `api/stagehand/main.ts`.
  * To edit config, see `stagehand.config.ts`.
  *
- * In this quickstart, we'll be automating a browser session to show you the power of Playwright and Stagehand's AI features.
+ * In this quickstart, we'll be automating a browser session to show you the power of Stagehand.
  */
 "use server";
 
@@ -21,7 +21,7 @@ export async function runStagehand(sessionId?: string) {
     browserbaseSessionID: sessionId,
   });
   await stagehand.init();
-  await main({ page: stagehand.page, context: stagehand.context, stagehand });
+  await main({ stagehand });
   await stagehand.close();
 }
 
@@ -46,9 +46,8 @@ export async function getConfig() {
 
   return {
     env: StagehandConfig.env,
-    debugDom: StagehandConfig.debugDom,
-    headless: StagehandConfig.headless,
-    domSettleTimeoutMs: StagehandConfig.domSettleTimeoutMs,
+    verbose: StagehandConfig.verbose,
+    domSettleTimeout: StagehandConfig.domSettleTimeout,
     browserbaseSessionID: StagehandConfig.browserbaseSessionID,
     hasBrowserbaseCredentials,
     hasLLMCredentials,

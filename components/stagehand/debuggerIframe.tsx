@@ -37,5 +37,13 @@ export default function DebuggerIframe({
     );
   }
 
-  return <iframe src={debugUrl} className="h-full w-full aspect-video border border-gray-200 dark:border-gray-800 " />;
+  return (
+    <iframe
+      src={debugUrl}
+      className="h-full w-full aspect-video border border-gray-200 dark:border-gray-800"
+      sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
+      allow="clipboard-read; clipboard-write"
+      title="Browserbase Debugger"
+    />
+  );
 }
