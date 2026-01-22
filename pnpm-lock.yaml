@@ -12,8 +12,8 @@ importers:
         specifier: ^2.6.0
         version: 2.6.0
       '@browserbasehq/stagehand':
-        specifier: ^3.0.6
-        version: 3.0.6(@cfworker/json-schema@4.1.1)(@opentelemetry/api@1.9.0)(deepmerge@4.3.1)(dotenv@16.5.0)(hono@4.11.1)(zod@4.2.1)
+        specifier: ^3.0.8
+        version: 3.0.8(@cfworker/json-schema@4.1.1)(@opentelemetry/api@1.9.0)(deepmerge@4.3.1)(dotenv@16.5.0)(hono@4.11.1)(zod@4.2.1)
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
@@ -167,12 +167,12 @@ packages:
   '@browserbasehq/sdk@2.6.0':
     resolution: {integrity: sha512-83iXP5D7xMm8Wyn66TUaUrgoByCmAJuoMoZQI3sGg3JAiMlTfnCIMqyVBoNSaItaPIkaCnrsj6LiusmXV2X9YA==}
 
-  '@browserbasehq/stagehand@3.0.6':
-    resolution: {integrity: sha512-WN/GuJMHXyXNsQTErmeTEstxUe0gZf9DLXlPkfJtVUuqErIJgZPiBstlTrdgx7I8n1ZE+q8gaEU/beJsW30+bg==}
+  '@browserbasehq/stagehand@3.0.8':
+    resolution: {integrity: sha512-ppI4PmqjRnFEpTtaQyRzKZgL4uVzscOQsDjBpQlvZNhhEp3da1wBaP1ml/hMfsuAmY9wOUwdN4V0uyyRbxWAdA==}
     peerDependencies:
       deepmerge: ^4.3.1
       dotenv: ^16.4.5
-      zod: ^3.25.76 || ^4.1.8
+      zod: ^3.25.76 || ^4.2.0
 
   '@cfworker/json-schema@4.1.1':
     resolution: {integrity: sha512-gAmrUZSGtKc3AiBL71iNWxDsyUC5uMaKKGdvzYsBoTW/xi42JQHl7eKV2OYzCUqvc+D2RCcf7EXY2iCyFIk6og==}
@@ -2922,7 +2922,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@browserbasehq/stagehand@3.0.6(@cfworker/json-schema@4.1.1)(@opentelemetry/api@1.9.0)(deepmerge@4.3.1)(dotenv@16.5.0)(hono@4.11.1)(zod@4.2.1)':
+  '@browserbasehq/stagehand@3.0.8(@cfworker/json-schema@4.1.1)(@opentelemetry/api@1.9.0)(deepmerge@4.3.1)(dotenv@16.5.0)(hono@4.11.1)(zod@4.2.1)':
     dependencies:
       '@ai-sdk/provider': 2.0.0
       '@anthropic-ai/sdk': 0.39.0
@@ -2938,7 +2938,6 @@ snapshots:
       openai: 4.104.0(ws@8.18.0(bufferutil@4.1.0))(zod@4.2.1)
       pino: 9.14.0
       pino-pretty: 13.1.3
-      playwright: 1.57.0
       uuid: 11.1.0
       ws: 8.18.0(bufferutil@4.1.0)
       zod: 4.2.1
@@ -2961,6 +2960,7 @@ snapshots:
       chrome-launcher: 1.2.1
       ollama-ai-provider-v2: 1.5.5(zod@4.2.1)
       patchright-core: 1.57.0
+      playwright: 1.57.0
       playwright-core: 1.57.0
       puppeteer-core: 22.15.0(bufferutil@4.1.0)
     transitivePeerDependencies:
@@ -3267,7 +3267,7 @@ snapshots:
 
   '@puppeteer/browsers@2.3.0':
     dependencies:
-      debug: 4.4.0
+      debug: 4.4.3
       extract-zip: 2.0.1
       progress: 2.0.3
       proxy-agent: 6.5.0
@@ -3371,7 +3371,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 8.22.0(typescript@5.7.3)
       '@typescript-eslint/utils': 8.22.0(eslint@9.19.0(jiti@1.21.7))(typescript@5.7.3)
-      debug: 4.4.0
+      debug: 4.4.3
       eslint: 9.19.0(jiti@1.21.7)
       ts-api-utils: 2.0.1(typescript@5.7.3)
       typescript: 5.7.3
@@ -3384,7 +3384,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.22.0
       '@typescript-eslint/visitor-keys': 8.22.0
-      debug: 4.4.0
+      debug: 4.4.3
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -4254,7 +4254,7 @@ snapshots:
       content-type: 1.0.5
       cookie: 0.7.2
       cookie-signature: 1.2.2
-      debug: 4.4.0
+      debug: 4.4.3
       depd: 2.0.0
       encodeurl: 2.0.0
       escape-html: 1.0.3
@@ -4283,7 +4283,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.4.0
+      debug: 4.4.3
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -4352,7 +4352,7 @@ snapshots:
 
   finalhandler@2.1.1:
     dependencies:
-      debug: 4.4.0
+      debug: 4.4.3
       encodeurl: 2.0.0
       escape-html: 1.0.3
       on-finished: 2.4.1
@@ -4479,7 +4479,7 @@ snapshots:
     dependencies:
       basic-ftp: 5.0.5
       data-uri-to-buffer: 6.0.2
-      debug: 4.4.0
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -4572,7 +4572,7 @@ snapshots:
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.4
-      debug: 4.4.0
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -4580,7 +4580,7 @@ snapshots:
   https-proxy-agent@7.0.6:
     dependencies:
       agent-base: 7.1.4
-      debug: 4.4.0
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -5111,7 +5111,7 @@ snapshots:
     dependencies:
       '@tootallnate/quickjs-emscripten': 0.23.0
       agent-base: 7.1.4
-      debug: 4.4.0
+      debug: 4.4.3
       get-uri: 6.0.5
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
@@ -5221,6 +5221,7 @@ snapshots:
       playwright-core: 1.57.0
     optionalDependencies:
       fsevents: 2.3.2
+    optional: true
 
   possible-typed-array-names@1.0.0: {}
 
@@ -5288,7 +5289,7 @@ snapshots:
   proxy-agent@6.5.0:
     dependencies:
       agent-base: 7.1.4
-      debug: 4.4.0
+      debug: 4.4.3
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       lru-cache: 7.18.3
@@ -5313,7 +5314,7 @@ snapshots:
     dependencies:
       '@puppeteer/browsers': 2.3.0
       chromium-bidi: 0.6.3(devtools-protocol@0.0.1312386)
-      debug: 4.4.0
+      debug: 4.4.3
       devtools-protocol: 0.0.1312386
       ws: 8.18.0(bufferutil@4.1.0)
     transitivePeerDependencies:
@@ -5412,7 +5413,7 @@ snapshots:
 
   router@2.2.0:
     dependencies:
-      debug: 4.4.0
+      debug: 4.4.3
       depd: 2.0.0
       is-promise: 4.0.0
       parseurl: 1.3.3
@@ -5584,7 +5585,7 @@ snapshots:
   socks-proxy-agent@8.0.5:
     dependencies:
       agent-base: 7.1.4
-      debug: 4.4.0
+      debug: 4.4.3
       socks: 2.8.7
     transitivePeerDependencies:
       - supports-color
