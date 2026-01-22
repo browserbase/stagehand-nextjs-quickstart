@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@browserbasehq/sdk": "^2.6.0",
-    "@browserbasehq/stagehand": "^3.0.6",
+    "@browserbasehq/stagehand": "^3.0.8",
     "dotenv": "^16.5.0",
     "next": "15.2.8",
     "playwright-core": "^1.57.0",
