@@ -1,17 +1,12 @@
 "use client";
 
-import {
-  getConfig,
-  runStagehand,
-  startBBSSession,
-} from "@/app/api/stagehand/run";
+import { getConfig } from "@/app/api/stagehand/run";
 import DebuggerIframe from "@/components/stagehand/debuggerIframe";
-import { V3Options } from "@browserbasehq/stagehand";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
 export default function Home() {
-  const [config, setConfig] = useState<V3Options | null>(null);
+  const [config, setConfig] = useState<Awaited<ReturnType<typeof getConfig>> | null>(null);
   const [running, setRunning] = useState(false);
   const [debugUrl, setDebugUrl] = useState<string | undefined>(undefined);
   const [sessionId, setSessionId] = useState<string | undefined>(undefined);
@@ -24,7 +19,7 @@ export default function Home() {
     const warningToShow: string[] = [];
     if (!config.hasLLMCredentials) {
       warningToShow.push(
-        "No LLM credentials found. Edit stagehand.config.ts to configure your LLM client."
+        "No Browserbase API key found. Add BROWSERBASE_API_KEY to enable Model Gateway."
       );
     }
     if (!config.hasBrowserbaseCredentials) {
@@ -40,29 +35,60 @@ export default function Home() {
 
     setRunning(true);
     setError(null);
+    setDebugUrl(undefined);
+    setSessionId(undefined);
 
     try {
-      if (config.env === "BROWSERBASE") {
-        const { sessionId, debugUrl } = await startBBSSession();
-        setDebugUrl(debugUrl);
-        setSessionId(sessionId);
-        await runStagehand(sessionId);
-      } else {
-        await runStagehand();
+      const response = await fetch("/api/stagehand", { method: "POST" });
+      if (!response.ok || !response.body) throw new Error("Unable to start Stagehand");
+      const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
+      let buffer = "";
+      let completed = false;
+      try {
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          buffer += value;
+          const lines = buffer.split("\n");
+          buffer = lines.pop()!;
+          for (const line of lines) {
+            if (!line) continue;
+            const event = JSON.parse(line);
+            if (event.type === "session") {
+              setDebugUrl(event.debugUrl);
+              setSessionId(event.sessionId);
+            } else if (event.type === "error") {
+              throw new Error(event.message);
+            } else if (event.type === "complete") {
+              completed = true;
+            }
+          }
+        }
+        if (!completed) throw new Error("Stagehand run ended before completion");
+      } finally {
+        try {
+          await reader.cancel();
+        } catch {
+          // Preserve the original error when the stream has already failed.
+        } finally {
+          reader.releaseLock();
+        }
       }
     } catch (error) {
-      setError((error as Error).message);
+      setError(error instanceof Error ? error.message : "Stagehand run failed");
     } finally {
       setRunning(false);
     }
   }, [config]);
 
   useEffect(() => {
-    fetchConfig();
+    fetchConfig().catch((error: unknown) => {
+      setError(error instanceof Error ? error.message : "Unable to load configuration");
+    });
   }, [fetchConfig]);
 
   if (config === null) {
-    return <div>Loading...</div>;
+    return <div role={error ? "alert" : "status"}>{error || "Loading..."}</div>;
   }
 
   return (

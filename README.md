@@ -1,6 +1,6 @@
 # 🤘 Welcome to Stagehand Next.js!
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbrowserbase%2Fstagehand-nextjs-quickstart&env=BROWSERBASE_API_KEY,BROWSERBASE_PROJECT_ID,OPENAI_API_KEY&envDescription=Browserbase%20credentials%20%2B%20OpenAI.%20You%20can%20configure%20your%20project%20to%20use%20Anthropic%20or%20a%20custom%20LLMClient%20in%20stagehand.config.ts&project-name=stagehand-nextjs&repository-name=stagehand-nextjs)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbrowserbase%2Fstagehand-nextjs-quickstart&env=BROWSERBASE_API_KEY,BROWSERBASE_PROJECT_ID&envDescription=Browserbase%20credentials%20for%20browser%20sessions%20and%20Model%20Gateway&project-name=stagehand-nextjs&repository-name=stagehand-nextjs)
 
 Hey! This is a Next.js project built with [Stagehand](https://github.com/browserbase/stagehand).
 
@@ -8,7 +8,7 @@ You can build your own web agent using: `npx create-browser-app`!
 
 ## Setting the Stage
 
-Stagehand is an SDK for automating browsers. It's built directly on top of [CDP](https://chromedevtools.github.io/devtools-protocol/) and provides a higher-level API for better debugging and AI fail-safes.
+Stagehand is an SDK for automating browsers. This quickstart uses Stagehand 4.1.0, with browser creation through `browserbase.launch()` or `localBrowser.launch()` and AI operations through `Stagehand.create()`.
 
 ## Curtain Call
 
@@ -22,11 +22,7 @@ pnpm install && pnpm dev
 
 ### Add your API keys
 
-This project defaults to using OpenAI, so it's going to throw a fit if you don't have an OpenAI API key.
-
-To use Anthropic (or other LLMs), you'll need to edit [stagehand.config.ts](stagehand.config.ts) to use the appropriate API key.
-
-You'll also want to set your Browserbase API key and project ID to run this project in the cloud.
+This project uses Browserbase Model Gateway. Set `BROWSERBASE_API_KEY` and `BROWSERBASE_PROJECT_ID`; no separate OpenAI key is required.
 
 ```bash
 cp .example.env .env # Add your API keys to .env
@@ -38,10 +34,18 @@ We have custom .cursorrules for this project. It'll help quite a bit with writin
 
 ### Run on Browserbase
 
-To run on Browserbase, add your API keys to .env and change `env: "LOCAL"` to `env: "BROWSERBASE"` in [stagehand.config.ts](stagehand.config.ts).
+To run on Browserbase, add your API keys to .env and set `browserConfig.env` to `"BROWSERBASE"` in [stagehand.config.ts](stagehand.config.ts).
 
-### Use Anthropic Claude 4.5 Sonnet
+### Choose a model
 
-1. Add your API key to .env
-2. Change `modelName: "gpt-4o"` to `modelName: "claude-sonnet-4-5"` in [stagehand.config.ts](stagehand.config.ts)
-3. Change `modelClientOptions: { apiKey: process.env.OPENAI_API_KEY }` to `modelClientOptions: { apiKey: process.env.ANTHROPIC_API_KEY }` in [stagehand.config.ts](stagehand.config.ts)
+By default, Model Gateway chooses the model. To select one explicitly, add a `model` object with a supported provider-prefixed `modelName` to `stagehand.config.ts`. Model Gateway uses your Browserbase API key.
+
+### Live demo lifecycle
+
+The `/api/stagehand` POST route streams the session ID and debugger URL to the page while the demo runs. It creates the browser with the Stagehand v4 extension, uses Zod v4 schemas and the `data` returned by `extract()` and `observe()`, and closes both Stagehand and the browser when finished or when a run fails.
+
+### Validation
+
+Run `pnpm typecheck`, `pnpm lint`, `pnpm test`, and `pnpm build`. The regression tests mock Browserbase and cover locator fallback, failed actions, session streaming, and browser cleanup, including client disconnection. A live run additionally requires the API keys above.
+
+The demo navigates to `https://docs.stagehand.dev/` to extract and follow its quickstart link. The previous `docs.browserbase.com` target did not expose the Stagehand v4 extension context during live verification, causing locator and AI clicks to fail.
