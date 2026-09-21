@@ -46,6 +46,6 @@ The `/api/stagehand` POST route streams the session ID and debugger URL to the p
 
 ### Validation
 
-Run `pnpm typecheck`, `pnpm lint`, `pnpm test`, and `pnpm build`. The regression tests mock Browserbase and cover locator fallback, failed actions, session streaming, and browser cleanup, including client disconnection. A live run additionally requires the API keys above.
+Run `pnpm typecheck`, `pnpm lint`, `pnpm test`, and `pnpm build`. The regression tests mock Browserbase and cover locator fallback, failed actions, session streaming, and browser cleanup, including client disconnection. 
 
-The demo navigates to `https://docs.stagehand.dev/` to extract and follow its quickstart link. The previous `docs.browserbase.com` target did not expose the Stagehand v4 extension context during live verification, causing locator and AI clicks to fail.
+The demo navigates to `https://docs.stagehand.dev/` to extract and follow its quickstart link.
